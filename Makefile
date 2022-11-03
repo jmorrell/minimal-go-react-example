@@ -4,11 +4,11 @@ install:
 	go mod tidy
 	go mod vendor
 
-.PHONE: build-go
+.PHONY: build-go
 build-go:
 	go build ./...
 
-.PHONE: run-go
+.PHONY: run-go
 run-go:
 	go run ./...
 
@@ -16,6 +16,6 @@ run-go:
 build-js:
 	npx esbuild --bundle app/main.jsx app/main.css --outdir=static
 
-.PHONE: watch-js
+.PHONY: watch-js
 watch-js:
 	npx esbuild --watch --bundle app/main.jsx app/main.css --outdir=static
